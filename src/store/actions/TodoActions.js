@@ -43,6 +43,7 @@ export const addTodo = (todoToAdd) => {
     return async (dispatch, getState) => {
         try {
             let { todos } = getState().TodoModule;
+            if (todos.length >= 10) return 'Maximum 10 todos allowed'
             const newTodo = await todoService.addTodo(todoToAdd);
             const todosCopy = JSON.parse(JSON.stringify(todos))
             todosCopy.unshift(newTodo)

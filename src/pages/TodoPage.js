@@ -34,7 +34,7 @@ const TodoPage = () => {
 
     return (
         <section>
-            <button onClick={() => { setIsAddShown(true) }}>Add todo</button>
+            {todos.length <= 10 && <button onClick={() => { setIsAddShown(true) }}>Add todo</button>}
             {todos?.length ? <TodoList todos={todos} submitEditTodo={submitEditTodo} deleteTodo={submitDeleteTodo} /> : <div>Loading todos..</div>
             }
             {isAddShown && <TodoEditModal callback={submitAddTodo} closeEdit={() => { setIsAddShown(false) }} />}
