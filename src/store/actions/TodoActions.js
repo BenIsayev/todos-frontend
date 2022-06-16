@@ -14,6 +14,7 @@ export const editTodo = (editedTodo) => {
     return async (dispatch, getState) => {
         try {
             let { todos } = getState().TodoModule;
+            if (editedTodo.title.trim() === '') return 'Cant add empty todo'
             const savedTodo = await todoService.editTodo(editedTodo);
             const todoIdx = todos.findIndex(todo => todo._id === editedTodo._id)
             if (todoIdx !== -1) {
@@ -43,6 +44,7 @@ export const addTodo = (todoToAdd) => {
     return async (dispatch, getState) => {
         try {
             let { todos } = getState().TodoModule;
+            if (todoToAdd.title.trim() === '') return 'Cant add empty todo'
             if (todos.length >= 10) return 'Maximum 10 todos allowed'
             const newTodo = await todoService.addTodo(todoToAdd);
             const todosCopy = JSON.parse(JSON.stringify(todos))
