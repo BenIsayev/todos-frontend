@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const BASE_URL =
-    process.env.NODE_ENV === 'production' ? 'https://boiling-everglades-79379.herokuapp.com/api/todo' : 'http://localhost:3030/api/todo/';
+    process.env.NODE_ENV === 'production' ? '/api/' : 'http://localhost:3030/api/todo/';
 
 const query = async () => {
     try {
