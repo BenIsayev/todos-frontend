@@ -1,0 +1,9 @@
+.todo-edit-modal {
+    position: fixed;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    background-color: lightgray;
+    padding: 3rem;
+    border-radius: 2rem;
+}

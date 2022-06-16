@@ -1,0 +1,13 @@
+.main-header {
+    background-color: lightsalmon;
+    width: 100vw;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header ul li:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
